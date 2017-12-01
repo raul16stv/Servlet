@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Conexion.ConsolaRepository;
-import es.salesianos.model.User;
-import es.salesianos.repository.UserRepository;
+
 
 public class ListGamesServlet extends HttpServlet {
 
@@ -19,13 +18,13 @@ public class ListGamesServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Videojuego> listAllGames = userReposirory.listAllUsers();
-		req.getSession().setAttribute("users", listAllUsers);
+		List<Videojuego> listAllGames = consolaRepo.listAllGames();
+		req.getSession().setAttribute("videojuegos", listAllGames);
 		redirect(req, resp);
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listado.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ListadoConsola.jsp");
 		dispatcher.forward(req, resp);
 	}
 }
