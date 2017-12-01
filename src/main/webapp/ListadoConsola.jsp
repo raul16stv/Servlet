@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ page import="java.io.*,java.util.*,es.salesianos.model.*"%>
+<%@ page import="java.io.*,java.util.*,ExamenRaul.ServletDDI.*"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -20,25 +20,24 @@
 		<thead>
 			<tr>
 				<td>Nombre</td>
-				<td>Apellido</td>
-				<td>Dni</td>
+				<td>Empresa</td>
+		
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="user" items="${users}">
+			<c:forEach var="consola" items="${consola}">
 				<tr>
-					<td><c:out value="${user.nombre}" /></td>
-					<td><c:out value="${user.apellido}" /></td>
-					<td><c:out value="${user.dni}" /></td>
-					<td><a href="/delete?dni=${user.nombre}">borrar</a></td>
+					<td><c:out value="${consola.nombre}" /></td>
+					<td><c:out value="${consola.EmpresaID}" /></td>
+					<td><a href="/delete?nombre=${consola.nombre}">borrar</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 
 	<select>
-		<c:forEach var="user" items="${users}">
-			<option value="${user.nombre}">${user.nombre}</option>
+		<c:forEach var="consola" items="${consola}">
+			<option value="${consola.nombre}">${consola.nombre}</option>
 		</c:forEach>
 	</select>
 
