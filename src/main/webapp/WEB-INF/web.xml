@@ -14,7 +14,7 @@
 	</servlet-mapping>
 		<servlet>
 		<servlet-name>VideoJuegosServlet</servlet-name>
-		<servlet-class>ExamenRaul.ServletDDI.VideoJuegosServlet</servlet-class>
+		<servlet-class>Servlet.VideoJuegosServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>VideoJuegosServlet</servlet-name>
@@ -22,16 +22,33 @@
 	</servlet-mapping>
 
 	<servlet>
+        <servlet-name>ListConsolaServlet</servlet-name>
+        <servlet-class>Servlet.ListConsolaServlet</servlet-class>
+    </servlet>
+	<servlet-mapping>
+		<servlet-name>ListConsolaServlet</servlet-name>
+        <url-pattern>/cargarListado</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>ListGamesServlet</servlet-name>
-        <servlet-class>ExamenRaul.ServletDDI.ListGamesServlet</servlet-class>
+        <servlet-class>Servlet.ListGamesServlet</servlet-class>
     </servlet>
 	<servlet-mapping>
         <servlet-name>ListGamesServlet</servlet-name>
-        <url-pattern>/cargarListado</url-pattern>
+        <url-pattern>/cargarListadoGames</url-pattern>
     </servlet-mapping>
-    
+    	<servlet>
+		<servlet-name>DeleteServlet</servlet-name>
+		<servlet-class>Servlet.DeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DeleteServlet</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+
 	<welcome-file-list>
-		<welcome-file>AltaConsola.jsp</welcome-file>
+		<welcome-file>AltaVideojuegos.jsp</welcome-file>
 	</welcome-file-list>
 
 </web-app>

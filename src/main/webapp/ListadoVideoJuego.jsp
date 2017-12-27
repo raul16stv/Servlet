@@ -12,7 +12,7 @@
 <title>Listado de usuario</title>
 </head>
 <body>
-	<form action="cargarListado" method="post">
+	<form action="cargarListadoGames" method="post">
 		<input type="submit" value="ver listado">
 	</form>
 
